@@ -16,7 +16,7 @@ _steps = [
     # NOTE: We do not include this in the steps so it is not run by mistake.
     # You first need to promote a model export to "prod" before you can run this,
     # then you need to run this step explicitly
-#    "test_regression_model"
+    # "test_regression_model"
 ]
 
 
@@ -50,11 +50,25 @@ def go(config: DictConfig):
             )
 
         if "basic_cleaning" in active_steps:
-            ##################
-            # Implement here #
-            ##################
-            pass
+            # Perform basic cleaning
+            _ = mlflow.run(
+                #os navigate to src/basic_cleaning
+                os.path.join(os.getcwd(),'src','basic_cleaning'),
+                'main',
+                env_manager="conda",
+                parameters={
+                    # Taken from spec
+                    "input_artifact":"sample.csv:latest",
+                    "output_artifact":"clean_sample.csv",
+                    "output_type":"dataset",
+                    "output_description":"dataset after basic_cleaning",
+                    "min_price":config['etl']['min_price'],
+                    "max_price":config['etl']['max_price'],
+                }
+            )
 
+
+            
         if "data_check" in active_steps:
             ##################
             # Implement here #
