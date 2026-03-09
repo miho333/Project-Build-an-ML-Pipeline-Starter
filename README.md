@@ -1,3 +1,8 @@
+# W&B Link
+This links to the default report to the project in W&B. Now that W&B is no longer allowed to be public without a paid account this presents some difficulty sharing the work. I have read through the Udacity Knowledge Base Q&A and it was suggested to use a default report and make it public:
+
+https://wandb.ai/miho-333/nyc_airbnb/reports/Public-Report-for-nyc_airbnb--VmlldzoxNjE0NzgzNw?accessToken=ugmaqr80lc4osujth4v4jvcobodhbwjllzhx4d5pvim2tc23nm3ql3bcp7bgrjgu
+
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
